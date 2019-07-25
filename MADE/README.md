@@ -12,5 +12,16 @@ Some takeways from reading his code:
 
 ```python
     for h0, h1 in zip(hs, hs[1:])
-        h1 = h0
+        masklinear = MaskedLinear(h0, h1)
 ``` 
+
+where hs is a list of number of units in each layer, h0 is the number of units in previous layer, h1 is the number of units in next layer
+
+- nn.Sequential takes positional argument *arg or a disctionary
+- trick of None adds new axis to original vector
+```python
+self.m[l-1][:,None]
+self.m[l][None,:]
+```
+
+- zip() is super useful in many cases, think about how you can leverage its power
