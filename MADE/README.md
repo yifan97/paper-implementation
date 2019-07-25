@@ -3,7 +3,7 @@ This is an implementation of "Masked AutoEncoder for Density Estimation" by Germ
 The original code is adapted from [Andrej Karpathy](https://github.com/karpathy/pytorch-made)
 
 
-Some takeways from reading his code:
+Some **takeways** from reading his code:
 
 - activation functions is under torch.nn
 - all models should inherent from torch.nn.Module
@@ -18,7 +18,7 @@ Some takeways from reading his code:
 where hs is a list of number of units in each layer, h0 is the number of units in previous layer, h1 is the number of units in next layer
 
 - nn.Sequential takes positional argument *arg or a disctionary
-- trick of None adds new axis to original vector
+- trick of *None*: adds new axis to original vector
 ```python
 self.m[l-1][:,None]
 self.m[l][None,:]
