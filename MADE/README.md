@@ -5,8 +5,8 @@ The original code is adapted from [Andrej Karpathy](https://github.com/karpathy/
 
 Some **takeways** from reading his code:
 
-- activation functions is under torch.nn
-- all models should inherent from torch.nn.Module
+- activation functions is under ```torch.nn```
+- all models should inherent from ```torch.nn.Module```
 - register_buffer is usually used to create weigths and bias. The reason to use it can be found [here](https://discuss.pytorch.org/t/what-is-the-difference-between-register-buffer-and-register-parameter-of-nn-module/32723)
 - if you want to represent weight matrix with information of each layer's unit number, ther is a efficient zip() trick: 
 
