@@ -10,4 +10,4 @@ Some takeways from reading his code:
 - register_buffer is usually used to create weigths and bias. The reason to use it can be found [here](https://discuss.pytorch.org/t/what-is-the-difference-between-register-buffer-and-register-parameter-of-nn-module/32723)
 - if you want to represent weight matrix with information of each layer's unit number, ther is a efficient zip() trick: 
 
-for h0, h1 in zip(hs, hs\[1:\]) 
+<code>for h0, h1 in zip(hs, hs[1:])<\code> 
