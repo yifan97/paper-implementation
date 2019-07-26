@@ -25,3 +25,26 @@ self.m[l][None,:]
 ```
 
 - zip() is super useful in many cases, think about how you can leverage its power
+- there are two main ways to convert a numpy array to tensor:
+```python
+tensor1 = torch.from_numpy(arr)
+tensor2 = torch.Tensor(arr)
+```
+- To get the length of each dimension, just use 
+```python
+tensor.size()  # to get length of all dimensions. 
+tensor.size(1) # to get the length of second dimension
+```
+- logits are unnormalized scores of your model. You apply softmax to it to get a probability distribution
+```python
+input = torch.randn((3, 2), requires_grad=True)
+target = torch.rand((3, 2), requires_grad=False)
+
+# see the difference between two cross entropy
+loss1 = F.binary_cross_entropy(F.sigmoid(input), target)
+loss2 = F.binary_cross_entropy_with_logits(input, target)
+
+loss1.backward()
+loss2.backward()
+
+```
